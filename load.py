@@ -5,11 +5,11 @@ from stable_baselines3 import A2C, PPO
 #Assault
 #Alien
 
-env = make_atari_env("AssaultNoFrameskip-v4", seed=0)
+env = make_atari_env("BreakoutNoFrameskip-v4", seed=0)
 env.reset()
-models_dir = "./models/AS/PPO-mlp"
+models_dir = "./models/BR/A2C"
 
-model_path = f"{models_dir}/1000000.zip"
+model_path = f"{models_dir}/2500000.zip"
 model = PPO.load(model_path, env=env)
 
 episodes = 10

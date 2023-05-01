@@ -5,8 +5,8 @@ import os
 
 #num_cpu = 512
 
-models_dir = "./models/AL/A2C"
-logdir = "./logs/AL"
+models_dir = "./models/BR/A2C"
+logdir = "./logs/BR"
 
 if not os.path.exists(models_dir):
     os.makedirs(models_dir)
@@ -14,7 +14,7 @@ if not os.path.exists(models_dir):
 if not os.path.exists(logdir):
     os.makedirs(logdir)
 
-env = env = make_atari_env("AlienNoFrameskip-v4", seed=0)
+env = env = make_atari_env("BreakoutNoFrameskip-v4", seed=0)
 env.reset()
 
 model = A2C("CnnPolicy", env, verbose=1, tensorboard_log = logdir)
